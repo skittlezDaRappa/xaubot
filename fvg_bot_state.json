@@ -1,0 +1,18 @@
+{
+  "initialized": true,
+  "bias": "Bearish",
+  "active_setup": {
+    "direction": "SHORT",
+    "anchor_time": 1,
+    "near_edge": 4636.10009765625,
+    "entry": 4641.0,
+    "sl": 4648.579358998605,
+    "tp": 4563.5,
+    "risk": 7.57935899860513,
+    "rr": 10.22513909345932,
+    "lots": 0.13,
+    "status": "PENDING",
+    "last_checked": 1787936022.9439166
+  },
+  "last_run_utc": "2026-08-28T16:53:42.943939+00:00"
+}
