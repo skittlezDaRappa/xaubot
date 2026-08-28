@@ -1,0 +1,45 @@
+name: XAUUSD FVG Telegram Bot
+
+on:
+  schedule:
+    # Every 5 minutes (GitHub's minimum granularity). It can still run a
+    # little late during high load, so treat this as "roughly every 5 min".
+    # NOTE: this cadence only stays free on a PUBLIC repo — GitHub Actions
+    # meters minutes on private repos (2,000 free/month), and 5-minute runs
+    # blow past that. See README.md.
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}   # lets you trigger a run manually from the Actions tab, for testing
+
+permissions:
+  contents: write   # needed so the workflow can commit fvg_bot_state.json back to the repo
+
+concurrency:
+  group: fvg-bot
+  cancel-in-progress: false   # never kill an in-progress run; just queue behind it
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run one check cycle
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python xauusd_fvg_telegram_bot.py
+
+      - name: Commit updated bot state
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add fvg_bot_state.json
+          git diff --cached --quiet || git commit -m "Update bot state [skip ci]"
+          git push
