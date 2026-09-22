@@ -1,6 +1,18 @@
 {
   "initialized": true,
-  "bias": "Neutral",
-  "active_setup": null,
-  "last_run_utc": "2026-09-22T15:53:04.288467+00:00"
+  "bias": "Bullish",
+  "active_setup": {
+    "direction": "LONG",
+    "anchor_time": 1,
+    "near_edge": 4385.5,
+    "entry": 4382.64990234375,
+    "sl": 4377.913243583973,
+    "tp": 4392.123219863304,
+    "risk": 4.736658759777129,
+    "rr": 2.0,
+    "lots": 0.21,
+    "status": "PENDING",
+    "last_checked": 1790105118.1631887
+  },
+  "last_run_utc": "2026-09-22T19:25:18.163212+00:00"
 }
