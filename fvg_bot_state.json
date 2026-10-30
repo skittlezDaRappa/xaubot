@@ -1,18 +1,18 @@
 {
   "initialized": true,
-  "bias": "Bullish",
+  "bias": "Bearish",
   "active_setup": {
-    "direction": "LONG",
-    "anchor_time": 1793300,
-    "near_edge": 4030.800048828125,
-    "entry": 4027.2000732421875,
-    "sl": 4022.0331442965053,
-    "tp": 4109.2998046875,
-    "risk": 5.16692894568223,
-    "rr": 15.889463994646094,
-    "lots": 0.19,
+    "direction": "SHORT",
+    "anchor_time": 1792638,
+    "near_edge": 4109.2998046875,
+    "entry": 4117.0,
+    "sl": 4126.232767715567,
+    "tp": 4098.534464568866,
+    "risk": 9.232767715567206,
+    "rr": 2.0,
+    "lots": 0.1,
     "status": "PENDING",
-    "last_checked": 1793311169.6231892
+    "last_checked": 1793325034.724639
   },
-  "last_run_utc": "2026-10-29T21:59:29.623213+00:00"
+  "last_run_utc": "2026-10-30T01:50:34.724677+00:00"
 }
